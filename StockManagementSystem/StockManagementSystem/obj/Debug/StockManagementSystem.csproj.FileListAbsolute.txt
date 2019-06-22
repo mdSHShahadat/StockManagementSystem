@@ -1,0 +1,1 @@
+D:\Enlight Solutions\Dot Net Training\Project SMS\StockManagementSystem\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
