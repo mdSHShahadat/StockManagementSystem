@@ -1,1 +1,9 @@
 D:\Enlight Solutions\Dot Net Training\Project SMS\StockManagementSystem\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe.config
+D:\Enlight Solutions\Dot Net Training\Project SMS\StockManagementSystem\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.exe
+D:\Enlight Solutions\Dot Net Training\Project SMS\StockManagementSystem\StockManagementSystem\StockManagementSystem\bin\Debug\StockManagementSystem.pdb
+D:\Enlight Solutions\Dot Net Training\Project SMS\StockManagementSystem\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.CategoryUi.resources
+D:\Enlight Solutions\Dot Net Training\Project SMS\StockManagementSystem\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.CompanyUi.resources
+D:\Enlight Solutions\Dot Net Training\Project SMS\StockManagementSystem\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.Properties.Resources.resources
+D:\Enlight Solutions\Dot Net Training\Project SMS\StockManagementSystem\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.csproj.GenerateResource.Cache
+D:\Enlight Solutions\Dot Net Training\Project SMS\StockManagementSystem\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.exe
+D:\Enlight Solutions\Dot Net Training\Project SMS\StockManagementSystem\StockManagementSystem\StockManagementSystem\obj\Debug\StockManagementSystem.pdb

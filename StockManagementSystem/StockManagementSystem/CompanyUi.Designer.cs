@@ -1,6 +1,6 @@
 ﻿namespace StockManagementSystem
 {
-    partial class CategoryUi
+    partial class CompanyUi
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ShowAllButton = new System.Windows.Forms.Button();
             this.companyNameLabel = new System.Windows.Forms.Label();
@@ -35,13 +36,17 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.displayDataGridView = new System.Windows.Forms.DataGridView();
-            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NextButton = new System.Windows.Forms.Button();
-            this.categoryNameTextBox = new System.Windows.Forms.TextBox();
+            this.companyNameTextBox = new System.Windows.Forms.TextBox();
             this.MenuButton = new System.Windows.Forms.Button();
             this.PreviousButton = new System.Windows.Forms.Button();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.displayDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -54,15 +59,15 @@
             this.groupBox1.Controls.Add(this.ExitButton);
             this.groupBox1.Controls.Add(this.displayDataGridView);
             this.groupBox1.Controls.Add(this.NextButton);
-            this.groupBox1.Controls.Add(this.categoryNameTextBox);
+            this.groupBox1.Controls.Add(this.companyNameTextBox);
             this.groupBox1.Controls.Add(this.MenuButton);
             this.groupBox1.Controls.Add(this.PreviousButton);
-            this.groupBox1.Location = new System.Drawing.Point(60, 9);
+            this.groupBox1.Location = new System.Drawing.Point(43, 15);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(535, 242);
-            this.groupBox1.TabIndex = 26;
+            this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Category";
+            this.groupBox1.Text = "Company";
             // 
             // ShowAllButton
             // 
@@ -75,6 +80,7 @@
             this.ShowAllButton.TabIndex = 23;
             this.ShowAllButton.Text = "Show All";
             this.ShowAllButton.UseVisualStyleBackColor = false;
+            this.ShowAllButton.Click += new System.EventHandler(this.ShowAllButton_Click);
             // 
             // companyNameLabel
             // 
@@ -94,9 +100,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(116, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 15);
+            this.label1.Size = new System.Drawing.Size(109, 15);
             this.label1.TabIndex = 15;
-            this.label1.Text = "Category Name";
+            this.label1.Text = "Company Name";
             // 
             // SaveButton
             // 
@@ -109,6 +115,7 @@
             this.SaveButton.TabIndex = 16;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = false;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // ExitButton
             // 
@@ -123,19 +130,19 @@
             // 
             // displayDataGridView
             // 
+            this.displayDataGridView.AutoGenerateColumns = false;
             this.displayDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.displayDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.displayDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SL});
+            this.SL,
+            this.iDDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn});
+            this.displayDataGridView.DataSource = this.categoryBindingSource;
             this.displayDataGridView.Location = new System.Drawing.Point(10, 75);
             this.displayDataGridView.Name = "displayDataGridView";
             this.displayDataGridView.Size = new System.Drawing.Size(504, 134);
             this.displayDataGridView.TabIndex = 17;
-            // 
-            // SL
-            // 
-            this.SL.HeaderText = "SL";
-            this.SL.Name = "SL";
+            this.displayDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.displayDataGridView_RowPostPaint);
             // 
             // NextButton
             // 
@@ -148,12 +155,12 @@
             this.NextButton.Text = "Next";
             this.NextButton.UseVisualStyleBackColor = false;
             // 
-            // categoryNameTextBox
+            // companyNameTextBox
             // 
-            this.categoryNameTextBox.Location = new System.Drawing.Point(226, 51);
-            this.categoryNameTextBox.Name = "categoryNameTextBox";
-            this.categoryNameTextBox.Size = new System.Drawing.Size(170, 20);
-            this.categoryNameTextBox.TabIndex = 18;
+            this.companyNameTextBox.Location = new System.Drawing.Point(226, 51);
+            this.companyNameTextBox.Name = "companyNameTextBox";
+            this.companyNameTextBox.Size = new System.Drawing.Size(170, 20);
+            this.companyNameTextBox.TabIndex = 18;
             // 
             // MenuButton
             // 
@@ -177,17 +184,40 @@
             this.PreviousButton.Text = "Previous";
             this.PreviousButton.UseVisualStyleBackColor = false;
             // 
-            // CategoryUi
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataSource = typeof(StockManagementSystem.Models.Category);
+            // 
+            // SL
+            // 
+            this.SL.HeaderText = "SL";
+            this.SL.Name = "SL";
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // CompanyUi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 275);
+            this.ClientSize = new System.Drawing.Size(621, 273);
             this.Controls.Add(this.groupBox1);
-            this.Name = "CategoryUi";
-            this.Text = "Category Setup";
+            this.Name = "CompanyUi";
+            this.Text = "Company Setup";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.displayDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,11 +231,13 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.DataGridView displayDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SL;
         private System.Windows.Forms.Button NextButton;
-        private System.Windows.Forms.TextBox categoryNameTextBox;
+        private System.Windows.Forms.TextBox companyNameTextBox;
         private System.Windows.Forms.Button MenuButton;
         private System.Windows.Forms.Button PreviousButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource categoryBindingSource;
     }
 }
-
